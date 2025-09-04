@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--Calcular reajuste salarial com base no tempo de serviço
+    0 - 9 anos 8%
+    10 - 19 anos 9%
+    20 mais anos 10% -->
+    
+    <h1>Reajuste Sálario</h1>
+
+    <input type="number" name="Salario" id="Salario" placeholder="Salário atual">
+    <br><br>
+    <input type="number" name="Tempo" id="Tempo" placeholder="Tempo de serviço">
+    <br><br>
+
+    <button onclick="Calcular()">Calcular</button>
+    <p id="resultado"></p>  
+    
+    <script>
+        function Calcular(){ 
+
+            var salario = parseFloat(document.getElementById("Salario").value); 
+            var tempo = parseFloat(document.getElementById("Tempo").value);
+            var novoSalario; 
+            if (tempo <= 9){
+                novoSalario = salario + (salario* 0.08);
+                //referente a 8%
+            } else if (tempo >= 10 && tempo <= 19){
+                //referente a 9%
+                novoSalario = salario + (salario * 0.09); 
+            } else {
+                //referente a 10%
+                novoSalario = salario + (salario * 0.10);
+
+            }
+            document.getElementById("resultado").innerHTML = "O novo salário é de: R$ " + novoSalario;
+        }
+
+    </script>
+</body>
+</html>

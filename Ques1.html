@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Calcular desconto de um produto 
+     ent: valor original e taxa desconto 
+     sair: valor com desconto -->
+     <h1>Desconto calcular </h1>
+     <input type="number" name="produto" id="produto" placeholder="Valor do produto">
+     <br><br>
+     <input type="number" name="desconto" id="desconto" placeholder="Taxa de desconto">
+     <br><br>
+     <button onclick="Calcular()">Calcular</button>
+     <p id="resultado"></p>
+
+     <script>
+        function Calcular(){
+            var valorProduto = parseFloat(document.getElementById("produto").value); 
+            var taxaDedesconto = parseFloat(document.getElementById("desconto").value);
+            var ValorFinal = valorProduto - (valorProduto * (taxaDedesconto / 100)); 
+
+            document.getElementById("resultado").innerHTML = "Valor com desconto é em R$ é de: " + ValorFinal
+        }
+
+     </script>
+</body>
+</html>

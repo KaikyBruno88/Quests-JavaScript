@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Calcular a área de um circulo - Raio e Área -->
+     <h1>Calcular área de circulo</h1>
+        <input type="number" name="raio" id="raio" placeholder="Raio do circulo">
+        <br><br>
+        <input type="number" name="area" id="area" placeholder="Área do circulo">
+        <br><br>
+        <button onclick="Calcular()">Calcular</button>
+        <p id="resultado"></p>
+
+        <script>
+            function Calcular(){
+                var raio = parseFloat(document.getElementById("raio").value);
+                var area = parseFloat(document.getElementById("area").value);
+                var areaFinal = 3.14 * (raio * raio);
+                //valor de Pi = 3.14; 
+                document.getElementById("resultado").innerHTML = "A área do circulo é de: " + areaFinal;
+            }
+        </script>
+</body>
+</html>
